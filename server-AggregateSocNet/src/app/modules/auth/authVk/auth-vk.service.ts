@@ -3,8 +3,8 @@ import {Model} from 'mongoose';
 import * as fetch from 'node-fetch';
 import {dataVkApp} from '../../dataVKApp';
 import {AuthVk} from './auth-vk.interface';
-import {AuthorizationResponseData} from './dto-auth-vk/authorization-response-data';
-import {AuthorizationRequestData} from './dto-auth-vk/authorization-request-data';
+import {AuthorizationResponseData} from '../dto-auth/authorization-response-data';
+import {AuthorizationRequestData} from '../dto-auth/authorization-request-data';
 
 
 @Component()

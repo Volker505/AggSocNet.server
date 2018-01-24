@@ -1,8 +1,8 @@
-import {UserDataDto} from './user-data.dto';
+import {UserData} from './user-data.dto';
 
 
 export class FriendsDataDto {
-    friends: UserDataDto[];
+    friends: UserData[];
 
     constructor(friends: {
         id: number,

@@ -1,4 +1,5 @@
 import * as mongoose from 'mongoose'
+import {RoomSchema} from './room';
 
 export const UserSchema = new mongoose.Schema({
     firstName: {
@@ -34,9 +35,7 @@ export const UserSchema = new mongoose.Schema({
     },
     city:{
         type: String
-    }
-    // friends:{
-    //     type:
-    // }
-    // expiewsIn: Number
+    },
+    friends:[this.UserSchema],
+    rooms: [RoomSchema]
 });

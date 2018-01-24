@@ -6,8 +6,8 @@ import Throw = Chai.Throw;
 import {UserInterface} from './modelsDB/user/user.interface';
 import {dataVkApp} from '../dataVKApp';
 import {async} from 'rxjs/scheduler/async';
-import {AuthorizationResponseData} from '../auth/authVk/dto-auth-vk/authorization-response-data';
-import {UserDataDto} from './dto-methods-api/user-data.dto';
+import {AuthorizationResponseData} from '../auth/dto-auth/authorization-response-data';
+import {UserData} from './dto-methods-api/user-data.dto';
 
 @Component()
 export class MethodsApiService {
@@ -31,7 +31,7 @@ export class MethodsApiService {
                 .then(data => data.json())
                 .then(objArrData => objArrData['response'][0])
                 .then(infoUser => {
-                    const dataUserInfo = new UserDataDto({
+                    const dataUserInfo = new UserData({
                         id: infoUser.id,
                         first_name: infoUser.first_name,
                         last_name: infoUser.last_name,

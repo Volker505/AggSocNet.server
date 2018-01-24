@@ -1,15 +1,18 @@
 
 
-export class UserDataDto{
+export class UserData{
+    userName: string;//login
     firstName: string;
     lastName?: string;
     password?: string;
     userIDVk: number;
-    userIDTelegram?: string;
+    userIdFacebook?: string;
+    userIdTelegram?: string;
     urlAvatar?: string;
     created: Date;
     sex?: number;
     city: string;
+    friends?: UserData[];
 
     constructor(user: {
         id:number,
