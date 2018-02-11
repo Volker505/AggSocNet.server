@@ -6,36 +6,40 @@ export const UserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    lastName:{
+    lastName: {
         type: String,
     },
-    password:{
+    password: {
         type: String
     },
-    userIDVk:{
+    userIDVk: {
         type: Number,
         unique: true,
         required: true
     },
-    userIDTelegram:{
+    userIDTelegram: {
         type: String
     },
-    userIDFacebook:{
+    userIDFacebook: {
         type: String
     },
-    urlAvatar:{
+    urlAvatar: {
         type: String
     },
-    created:{
+    created: {
         type: Date,
         default: Date.now()
     },
     sex: {
         type: Number
     },
-    city:{
+    city: {
         type: String
     },
-    friends:[this.UserSchema],
-    rooms: [RoomSchema]
+    // friends: {
+    //    type: [this.UserSchema]
+    // },
+    rooms: {
+        type: [RoomSchema]
+    }
 });

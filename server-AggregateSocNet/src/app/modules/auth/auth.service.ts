@@ -12,6 +12,6 @@ export class AuthService {
     }
 
     async authLogin(loginPassword: AuthLoginPasswordDto): Promise<{ token: string }> {
-
+        return null;
     }
 }

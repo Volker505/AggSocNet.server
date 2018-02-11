@@ -5,10 +5,10 @@ import {DatabaseModule} from './DB/database.module';
 import {AuthModule} from './modules/auth/auth.module';
 
 @Module({
-    modules:[
+    imports:[
         AuthModule,
         MethodaApiModule,
-        // DatabaseModule
+        DatabaseModule
     ]
 })
 export class ApplicationModule{

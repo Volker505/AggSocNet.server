@@ -2,7 +2,6 @@ import {Component, Inject} from '@nestjs/common';
 import * as fetch from 'node-fetch';
 import {AuthVk} from '../auth/authVk/auth-vk.interface';
 import {Model} from 'mongoose';
-import Throw = Chai.Throw;
 import {UserInterface} from './modelsDB/user/user.interface';
 import {dataVkApp} from '../dataVKApp';
 import {async} from 'rxjs/scheduler/async';
@@ -11,8 +10,8 @@ import {UserData} from './dto-methods-api/user-data.dto';
 
 @Component()
 export class MethodsApiService {
-    constructor(@Inject('AuthModelToken') private readonly authVkModel: Model<AuthVk>,
-                @Inject('ApiUserModelToken') private readonly userApiModel: Model<UserInterface>) {
+    constructor(@Inject('AuthModelTokenVk') private readonly authVkModel: Model<AuthVk>,
+                @Inject('ApiUserModelToken') private readonly userApiModel: Model<UserInterface>){
     }
 
     async getInfoUser(userIdS: number) {

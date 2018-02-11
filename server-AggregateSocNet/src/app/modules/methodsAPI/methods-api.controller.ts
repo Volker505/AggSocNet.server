@@ -14,4 +14,5 @@ export class MethodsApiController{
     async getFriendsVk(@Param() param:{token:number}){
         return await this.methodsApiService.getFriendsVk(param.token);
     }
+
 }

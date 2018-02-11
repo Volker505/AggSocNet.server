@@ -4,16 +4,22 @@ import {AuthService} from './auth.service';
 import {AuthController} from './auth.controller';
 import {DatabaseModule} from '../../DB/database.module';
 import {AuthVkModule} from './authVk/auth-vk.module';
+import {AuthVkService} from "./authVk/auth-vk.service";
 
 
 @Module({
-    modules: [DatabaseModule, AuthVkModule],
+    imports: [
+        DatabaseModule,
+        AuthVkModule
+    ],
     controllers: [AuthController],
-    components: [AuthService,
+    components: [
+        AuthService,
+        AuthVkService,
         ...authProviders],
-    exports:[
-        ...authProviders
-    ]
+    // exports:[
+    //     ...authProviders
+    // ]
 })
 export class AuthModule {
 }

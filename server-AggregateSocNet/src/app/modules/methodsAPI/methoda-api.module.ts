@@ -4,19 +4,17 @@ import {MethodsApiService} from './methods-api.service';
 import {methodApiProvider} from './methods-api.providers';
 import {DatabaseModule} from '../../DB/database.module';
 import {AuthVkModule} from '../auth/authVk/auth-vk.module';
+import {authProviders} from "../auth/auth.providers";
 
 @Module({
-    modules:[
-        DatabaseModule,
-        AuthVkModule
-    ],
-    controllers:[
-        MethodsApiController,
-    ],
+    imports:[DatabaseModule],
+    controllers:[MethodsApiController],
     components:[
         MethodsApiService,
-        ...methodApiProvider
-    ]
+        ...methodApiProvider,
+        ...authProviders
+    ],
+
 })
 export class MethodaApiModule{
 }

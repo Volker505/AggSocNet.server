@@ -9,7 +9,7 @@ import {AuthorizationRequestData} from '../dto-auth/authorization-request-data';
 
 @Component()
 export class AuthVkService {
-    constructor(@Inject('AuthModelToken') private readonly authVkModel: Model<AuthVk>) {
+    constructor(@Inject('AuthModelTokenVk') private readonly authVkModel: Model<AuthVk>) {
     }
 
     async getToken(reqData: AuthorizationRequestData): Promise<{token: number}> {

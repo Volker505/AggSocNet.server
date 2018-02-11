@@ -9,9 +9,12 @@ export const RoomSchema = new mongoose.Schema({
         type: Date,
         default: Date.now()
     },
-    messages:[MessageSchema],
+    messages:{
+        type: [MessageSchema]
+    },
 
     lastLetter:{
-        type: Date()
+        type: Date(),
+        default: Date.now()
     }
 });
