@@ -14,8 +14,8 @@ export class AuthVkService {
 
     async getToken(reqData: AuthorizationRequestData): Promise<{token: number}> {
         //todo
-        if (!reqData.token) {
-            return await fetch(`${dataVkApp.urlPrefixOuth}access_token?client_id=${dataVkApp.id}&client_secret=${dataVkApp.secret}&redirect_uri=http://localhost:8080/chats&code=${reqData.code}`)
+      if (!reqData.token) {
+            return await fetch(`${dataVkApp.urlPrefixOuth}access_token?client_id=${dataVkApp.id}&client_secret=${dataVkApp.secret}&redirect_uri=http://localhost:8081/chats&code=${reqData.code}`)
                 .then(res => {
                     return res.json();
                 }).then(authorizationData => {
@@ -23,6 +23,7 @@ export class AuthVkService {
                         token: authorizationData['access_token'],
                         userId: authorizationData['user_id'], expiewsIn: authorizationData['expires_in']
                     });
+                    this.authVkModel.remove({userId: authorizationData['user_id']});
                     this.authVkModel.create(dataAuth, (err, doc) => {
                         if (err) {
                             // console.log(err);

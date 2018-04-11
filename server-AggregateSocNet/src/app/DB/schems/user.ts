@@ -1,5 +1,6 @@
 import * as mongoose from 'mongoose'
 import {RoomSchema} from './room';
+import {FriendsSchema} from "./friends";
 
 export const UserSchema = new mongoose.Schema({
     firstName: {
@@ -36,9 +37,9 @@ export const UserSchema = new mongoose.Schema({
     city: {
         type: String
     },
-    // friends: {
-    //    type: [this.UserSchema]
-    // },
+    friends: {
+       type: FriendsSchema
+    },
     rooms: {
         type: [RoomSchema]
     }

@@ -8,7 +8,8 @@ import * as bodyParser from 'body-parser';
 
 async function bootstrap() {
     const ex = express();
-    ex.use(serveStatic(path.join(__dirname, '../../../client/dist')));
+    ex.use(serveStatic(path.join(__dirname, '../../../AggSocNet.client/dist')));
+    // console.log(path.join(__dirname, '../../../AggSocNet.client/dist'));
     const app = await NestFactory.create(ApplicationModule, ex);
     app.use(bodyParser.json());
     app.setGlobalPrefix('api');
@@ -17,7 +18,7 @@ async function bootstrap() {
             next();
         }
         else {
-            res.sendFile(path.join(__dirname, '../../../client/dist/index.html'));
+            res.sendFile(path.join(__dirname, '../../../AggSocNet.client/dist/index.html'));
         }
     });
     await app.listen(8081, () => console.log('server Run'));

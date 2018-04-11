@@ -8,8 +8,7 @@ import {authProviders} from "../auth.providers";
 @Module({
     imports: [DatabaseModule],
     components: [AuthVkService, ...authProviders],
-    exports: [AuthVkService,
-    ]
+    exports: [AuthVkService,]
 })
 export class AuthVkModule{
 }

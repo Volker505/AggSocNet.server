@@ -1,7 +1,7 @@
 
 import {Connection} from 'mongoose'
-import {UserSchema} from './modelsDB/user/user.schema';
 import {AuthVkSchema} from "../../DB/schems/authVk";
+import {UserSchema} from "../../DB/schems/user";
 
 export const methodApiProvider = [
     {

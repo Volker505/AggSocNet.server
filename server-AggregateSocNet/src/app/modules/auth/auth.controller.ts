@@ -10,6 +10,7 @@ export class AuthController {
 
     private jwtAuth: JWTAuth = new JWTAuth();
 
+
     constructor(private authVkService: AuthVkService,
                 private authService: AuthService) {
     }

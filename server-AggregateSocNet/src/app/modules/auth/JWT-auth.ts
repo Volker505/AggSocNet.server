@@ -1,6 +1,9 @@
 import * as JWT from 'jsonwebtoken';
 import {AuthLoginPasswordDto} from "./dto-auth/auth-login-password.dto";
 
+
+
+//todo подумать и запихнуть это в сервис
 export class JWTAuth {
     private serkretKey: string = 'iloveASN';
 

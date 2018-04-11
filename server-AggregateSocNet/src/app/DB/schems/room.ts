@@ -5,16 +5,18 @@ export const RoomSchema = new mongoose.Schema({
     name:{
         type: String
     },
+
     created:{
         type: Date,
         default: Date.now()
     },
+
     messages:{
         type: [MessageSchema]
     },
 
     lastLetter:{
-        type: Date(),
+        type: Date,
         default: Date.now()
     }
 });
